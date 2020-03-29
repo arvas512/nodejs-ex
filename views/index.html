@@ -1,424 +1,68 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
-
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body {
-  height: 100%;
-  font-family: Arial;
-  color: white;
-}
-
-#UpLeft {
-  width:  112px;
-  height: 64px;
-  margin: 2px;
-  top: 0%;
-  left: 0%;
-  position: fixed;
+.parallax {
+  /* The image used */
+/*  background-image: url("LOGOTYPO.png");*/
   background-color: white;
+
+  /* Set a specific height */
+  min-height: 200px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-
-#DownLeft {
-  font-family: Times New Roman;
-  //font-family: Calibri;
- // font-family: Georgia;
-//  line-height: 12px;
-
-  font-size: 75%;
-  width:  112px;
-  top: 64px;
-  bottom: 0;
-  left: 0%;
-  position: fixed;
+.middleZone{
+  line-height: 30px; 
+  height:200px; 
+  text-align: center; 
+  color: white; 
+  position: fixed; 
+  top : 30%;
+  left: 0; 
+  right: 0; 
+  
   background-color: black;
-//  animation: mymove 2s infinite;
+  font-size:24px;
+   
+  min-width: 200px; 
+  min-height: 200px;
 }
-
-
-#DownLeftContent {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-
-
-
-@keyframes mymove {
-  80% {line-height: 20px;}
-}
-
-
-#UpRight {
-
-  line-height: 4px;
-
-  text-align: center;
-  font-family: Times New Roman;
-  font-size: 100%;
-
-  /*display: flex;
-  justify-content: center;
-  align-items: center;*/
-
-
-  height: 64px;
-  top:  0;
-  left: 112px;
-  right: 0;
-  position: fixed;
-  background-color: black;
-}
-
-#DownRight {
-  font-family: Times New Roman;
-  font-size: 100%;
-//  border: 3px solid green;
-
-  position: fixed;
-  Top: 64px;
-  bottom: 0;
-  left: 112px;
-  right: 0;
-  background-color: white;
-  color: black;
-}
-
-
 
 </style>
-<title>ΟΜΑΚΟΕΙΟ</title>
 </head>
-
-
-
 <body>
 
 
-<div id="UpLeft">
-<div id="UpLeftContent">
-<!--   src="LOGOTYPO.png"  -->
-<!--   src="logo-ece.png"  -->
-    <img
-    src="https://www.ece.tuc.gr/fileadmin/users_data/eced/images/logo-ece.png"
-    alt="logo-ece.png"
-    width="116px"  height="60px"
-    >
-</div>
-</div>
+<div class="parallax"></div>
 
-
-<div id="UpRight">
+<div class="middleZone" >
+   </br>
   <h1>ΟΜΑΚΟΕΙΟ</h1>
  <p>Ιστότοπος άσκησης Μαθηματικών δεξιοτήτων  </p>
 </div>
 
+<div class="parallax"></div>
 
-<div id= "DownLeft">
-    <div id= "DownLeftContent" > <p><pre>
- Δρ. Χ.Αρβανίτης
- ΕΔΙΠ Μαθηματικών
- Σχολή ΗΜΜΥ
- Πολυτεχνείο Κρήτης </pre> </p> </div>
+<div class="middleZone" >
+   </br>
+  <h1>ΟΜΑΚΟΕΙΟ</h1>
+ <p>Ιστότοπος άσκησης Μαθηματικών δεξιοτήτων  </p>
 </div>
-
-<div id= "DownRight">
-
-      <p>Προσωρινά,  έχουν προσκληθεί μόνο οι εγγεγραμμένοι  φοιτητές του μαθήματος [ΜΑΘ102] "Μαθηματικά ΙΙ" της Σχολής ΗΜΜΥ, Πολυτεχνείου Κρήτης.</p>
-
-<style>
-input[type=text], input[type=password] {
-  padding: 5px 5px;
-  display: inline-block;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-
-#forma {
-  border: 1px solid grey;
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 10px;
-  position: absolute;
-  bottom: 50px;
-  right: 50px;
-//  width: 500px;
-
-}
-</style>
-
-  <div id="forma">
-    <label >Κλειδί Πρόσκλησης</label>
-    <input type='text' size='30' id='invitationTF'
-           onkeydown='if (event.keyCode == 13) { SendInvitation(); return false; }'>
-
- <p> Εισέρχεστε για πρώτη φορά οπότε πρέπει να ορίσετε </p>
-
-    <label >Κλειδί Ταυτοποίησης</label>
-    <input type="password" size='30' id="passwordTF"
-           onkeydown='if (event.keyCode == 13) { SendPassword(); return false; }'>
-
-
- <p> Επιβεβαιώστε    </p>
-    <label >Κλειδί Ταυτοποίησης</label>
-    <input type="password" size='30' id="password1TF"
-           onkeydown='if (event.keyCode == 13) { SendPassword1(); return false; }'>
-    <br>
-  </div>
-</div>
-
-
-<script>
-
- var passwordTF      = document.getElementById('passwordTF'),
-     password1TF     = document.getElementById('password1TF'),
-     winWidth        = window.innerWidth  || document.documentElement.clientWidth  || document.body.clientWidth,
-     winHeight       = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight,
-     scrollbar       = document.getElementById('scrollbar'),
-     scrollNumber    = document.getElementById('scrollNumber'),
-     url             = document.getElementById('url'),
-     mainDiv         = document.getElementById('mainDiv'),
-     progressParent  = document.getElementById('progressParent'),
-     progressDiv     = document.getElementById('progressDiv'),
-     progressBar     = document.getElementById('progressBar'),
-     progressLabel   = document.getElementById('progressLabel'),
-     progressMsg     = document.getElementById('progressMsg'),
-     progressParent1  = document.getElementById('progressParent1'),
-     progressDiv1     = document.getElementById('progressDiv1'),
-     progressBar1     = document.getElementById('progressBar1'),
-     progressLabel1   = document.getElementById('progressLabel1'),
-     progressMsg1     = document.getElementById('progressMsg1');
-// var nodes           = mainDiv.getElementsByTagName('*');
- var checkboxes      = { "NoPhotos": document.getElementById('NoPhotos'),
-                         "NoMeta":   document.getElementById('NoMeta'),
-     	        	 "OnlyText": document.getElementById('OnlyText'),
-     	        	 "OnlyBody": document.getElementById('OnlyBody'),
-     	        	 "NoScript": document.getElementById('NoScript'),
-     	        	 "Nohref":   document.getElementById('Nohref'),
-     	        	 "NoSrc":    document.getElementById('NoSrc'),
-     	        	 "NoStyles": document.getElementById('NoStyles'),
-     	        	 "Source":   document.getElementById('Source'),
-     	        	 "Noonload":   document.getElementById('Noonload'),
-     	        	 "Noitemtype": document.getElementById('Noitemtype'),
-     	        	 "Noaction":   document.getElementById('Noaction'), }
-     checkboxesKeys  = Object.keys( checkboxes);
- var OnProgress=false, OnProgress1=false;
-
-function pad(n)
-{ console.log( "************ pad *************");
-  return (n < 10) ? ("&nbsp;&nbsp;&nbsp;" + n) : (n < 100) ? ("&nbsp;&nbsp;" + n) : (n < 1000) ? ("&nbsp;" + n) : n ; }
-
- function Resize()
- { winWidth        = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-   winHeight       = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
- //  frame1.height   = frame2.height = frame3.height = frame4.height = winHeight - 240;
-   }
-
- function FramesWidth( w1, w2, w3, w4)
- { col1.width = w1; col2.width = w2; col3.width = w3; col4.width = w4;
-   for(var i=0, len=HideElCol1.length; i < len; HideElCol1[i].style.display = (w1 === '85%')?'inline':'none', i++);
-   for(var i=0, len=HideElCol2.length; i < len; HideElCol2[i].style.display = (w2 === '85%')?'inline':'none', i++);
-   for(var i=0, len=HideElCol3.length; i < len; HideElCol3[i].style.display = (w3 === '85%')?'inline':'none', i++);
-   for(var i=0, len=HideElCol4.length; i < len; HideElCol4[i].style.display = (w4 === '85%')?'inline':'none', i++);
-   Resize(); }
-
- function FW1() { FramesWidth( '85%',  '5%',  '5%',  '5%'); }
- function FW2() { FramesWidth( '5%' , '85%',  '5%',  '5%'); }
- function FW3() { FramesWidth( '5%' ,  '5%', '85%',  '5%'); }
- function FW4() { FramesWidth( '5%' ,  '5%',  '5%', '85%'); }
-
-
- var xhttp, xhttp1, xhttp2;
- if (window.XMLHttpRequest) xhttp1 = new XMLHttpRequest(), xhttp = new XMLHttpRequest(), xhttp2 = new XMLHttpRequest();
- else  xhttp1 = new ActiveXObject('Microsoft.XMLHTTP'), xhttp = new ActiveXObject('Microsoft.XMLHTTP'), xhttp2 = new ActiveXObject('Microsoft.XMLHTTP');
-
- xhttp.onloadend = function()
- { console.log( "xhttp.onloadend");
-   console.log(  this );
-   if (this.readyState == 4 && this.status == 200)
-   {      if( this.responseURL === 'http://localhost:3000/Initials')
-     { var strs = this.responseText.split(' ');
-       searchNumber.value = strs[0]; delayTime.value = strs[1]; wordDist.value = strs[2];
-       scrollbar.max  = parseInt(strs[3], 10); scrollbar.value  = 1; myScroll();
-       SetCheckboxes( strs.slice(4) );
-       FW1(); }
-
-     else if( this.responseURL === 'http://localhost:3000/post1')
-         frame1.src='/pageOut';
-
-     else if( this.responseURL === 'http://localhost:3000/DelContent1')
-       frame1.src= 'about:blank';
-
-     else if( this.responseURL === 'http://localhost:3000/CollectHtmls')
-     { var strs = this.responseText.split(' ');
-       scrollbar.max  = parseInt( strs[0], 10), scrollbar.value  = 1;
-       myScroll();  }
-
-     else if( this.responseURL === 'http://localhost:3000/DelContent2')
-     { scrollbar.max  = 0; scrollbar.value  = 1; myScroll();  }
-
-     else if( this.responseURL === 'http://localhost:3000/DelContent4')
-       frame4.src= 'about:blank';
-
-     else if( this.responseURL === 'http://localhost:3000/myScroll')
-     { url.innerHTML =  this.responseText ;
-       frame2.src = '/pageOut1';
-       frame4.src = '/pageOut3'; }
-
-     else if( this.responseURL === 'http://localhost:3000/WordDist')
-     { url1.innerHTML =  this.responseText ;
-       frame4.src = ( scrollbar.max > 0 ) ? '/pageOut3' : 'about:blank'; }
-
-     else if( this.responseURL === 'http://localhost:3000/CheckBoxes')
-       { frame2.src = '/pageOut1';
-         frame4.src = '/pageOut3'; }
-
-     else if( this.responseURL === 'http://localhost:3000/InitialFilters' )
-     { strs = this.responseText.split(' ');
-       SetCheckboxes( strs);
-       frame2.src = '/pageOut1';
-       frame4.src = '/pageOut3'; }
-     }}
-
-
-
-function setProgress( strs)
-{ console.log( "************ setProgress *************");
-  progressBar.style.width = strs[0];
-  progressLabel.innerHTML = strs[0];
-  progressMsg.innerHTML = strs[1]; }
-
-
-function start_endProgressBar( yes)
-{ console.log( "************ start_endProgressBar *************");
-  OnProgress = yes;
-  mainDiv.disabled = OnProgress;
-  setProgress(["0%", ""]);
-  progressParent.style.visibility = ( OnProgress)? "visible" : "hidden";
-  for(var i=0; i < nodes.length; i++) nodes[i].disabled = OnProgress;
-  if( OnProgress)
-  { xhttp1.open('POST', '/progress', true); xhttp1.send(); }}
-
-
-xhttp2.onloadend = function()
-{ console.log( "************ xhttp2.onloadend *************");
-  if (this.readyState == 4 && this.status == 200)
-  { if( this.responseURL === 'http://localhost:3000/progress1' )
-    { strs = (this.responseText).split(',');
-      if( strs[0]==="100%") start_endProgressBar1( false);
-      else
-      { setProgress1( strs);
-        setTimeout( function()
-                    { xhttp2.open('POST', '/progress1', true); xhttp2.send();}, 2); }}}}
-
-
-function setProgress1( strs)
-{ console.log( "************ setProgress1 *************");
-  progressBar1.style.width = strs[0];
-  progressLabel1.innerHTML = strs[0];
-  progressMsg1.innerHTML = strs[1]; }
-
-
-function start_endProgressBar1( yes)
-{ console.log( "************ start_endProgressBar1 *************");
-  OnProgress1 = yes | OnProgress;
-  mainDiv.disabled = OnProgress1;
-  setProgress1(["0%", ""]);
-  progressParent1.style.visibility = ( OnProgress1)? "visible" : "hidden";
-  for(var i=0; i < nodes.length; i++) nodes[i].disabled = OnProgress1;
-  if( OnProgress1)
-  { xhttp2.open('POST', '/progress1', true); xhttp2.send(); }
-  else
-  { xhttp.open('POST', '/CollectHtmlsEnd', true); xhttp.send(); }}
-
-
- function SendInvitation()
- { console.log( "************ SendIdentity *************");
-   xhttp.open('POST', 'IdentityFromPage', true); xhttp.send( invitationTF.value ); }
-
- function SendPassword()
- { console.log( "************ SendPassword *************");
-   xhttp.open('POST', 'PasswordFromPage', true); xhttp.send( passwordTF.value ); }
-
- function SendPassword1()
- { console.log( "************ SendPassword1 *************");
-   xhttp.open('POST', 'Password1FromPage', true); xhttp.send( password1TF.value ); }
-
-
- function CollectHtmlsOnly()
- { console.log( "************ CollectHtmlsOnly *************");
-   xhttp.open('POST', '/CollectHtmlsOnly', true); xhttp.send();
-   start_endProgressBar1( true); }
-
-
- function WordDist()
- { /*xhttp.open('POST', '/WordDist', true); xhttp.send( wordDist.value);*/ }
-
-
- function SearchNumber()
- { if( searchNumber.value == 0) searchNumber.value=1;
-   xhttp.open('POST', '/SearchNumber', true); xhttp.send( searchNumber.value ); }
-
-
- function DelayTime()
- { xhttp.open('POST', '/DelayTime', true); xhttp.send(  delayTime.value); }
-
-
- function PostRequest( strs)
- { console.log( "************ PostRequest *************");
-   xhttp.open('POST', strs, true); xhttp.send(); }
-
-
- function pad(n)
- { return (n<10) ? ("&nbsp;&nbsp;&nbsp;" + n) : (n<100) ? ("&nbsp;&nbsp;" + n) : (n<1000) ? ("&nbsp;" + n) : n ; }
-
-
- function changeScrollNumber()
- { scrollNumber.innerHTML = " " + pad(scrollbar.value) + "&nbsp;/" + pad(scrollbar.max); }
-
- function myScroll()
- { changeScrollNumber();
-   xhttp.open('POST', '/myScroll', true); xhttp.send( scrollbar.value-1 ); }
-
- function CheckBoxes( num)
- {  xhttp.open('POST', '/CheckBoxes', true); xhttp.send( GetCheckboxes());
-    /*start_endProgressBar( true);*/  }
-
-
- function GetCheckboxes()
- { var ci, strs='';
-   for( let i=0, leng=checkboxesKeys.length; i< leng; i++)
-   { ci = checkboxesKeys[i];
-     strs +=   ci + '=' + ((checkboxes[ci].checked)?'t':'') + ' '; }
-   return strs; }
-
-
- function SetCheckboxes( strs)
- { for( let i=0, leng=checkboxesKeys.length; i< leng; i++)
-   { var str1 = (strs) ? (strs[i].split('=')) : ([ checkboxesKeys[i], ""]);
-     checkboxes[ str1[0]].checked = ((str1[1])?true:false);}}
-
-
- function ClearFilters( strs)
- { SetCheckboxes( "");
-   CheckBoxes("");}
-
-
- function FiltersAction(strs)
- { xhttp.open('POST', strs, true); xhttp.send();}
-
-
- Resize();
-// xhttp.open('POST', 'Initials', true); xhttp.send();
-
-</script>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
